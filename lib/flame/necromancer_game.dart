@@ -11,16 +11,16 @@ class NecromancerGame extends FlameGame {
     super.onLoad();
 
     // 스프라이트 시트 로드
-    final necromancerSpriteSheet = await Flame.images.load('work_necromancer.webp');
+    final necromancerSpriteSheet = await Flame.images.load('work_necromancer-73x32.png');
     
     // 스프라이트 시트의 각 프레임 크기 (예: 64x64)
-    final spriteSize = Vector2(64, 64);
+    final spriteSize = Vector2(24, 32);
 
     // 스프라이트 애니메이션 설정 (예: 프레임 4개)
     final animation = SpriteAnimation.fromFrameData(
       necromancerSpriteSheet,
       SpriteAnimationData.sequenced(
-        amount: 4, // 프레임 수
+        amount: 3, // 프레임 수
         stepTime: 0.1, // 각 프레임이 지속되는 시간 (초)
         textureSize: spriteSize, // 각 프레임의 크기
       ),
@@ -36,6 +36,4 @@ class NecromancerGame extends FlameGame {
   }
 }
 
-void main() {
-  runApp(GameWidget(game: NecromancerGame()));
-}
+

@@ -1,27 +1,23 @@
 import 'package:flame/game.dart';
 import 'package:flutter/material.dart';
 import 'package:necromancer/flame/necromancer_game.dart';
+import 'package:necromancer/main_game_page.dart';
 import 'package:necromancer/ui/screen/game_screen.dart';
 
 void main() {
-  runApp(GameWidget(
-    game: NecromancerGame()
-  ));
+  runApp(App());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class App extends StatelessWidget {
+  const App({Key? key}) : super(key: key);
 
-  // This widget is the root of your application.
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: GameScreen(),
+  Widget build(BuildContext context){
+    return const MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'necromancer',
+      home: MainGamePage()
     );
   }
 }
+
